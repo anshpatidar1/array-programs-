@@ -1,0 +1,19 @@
+def longest_cons(arr):
+    s = set(arr)
+    longest = 0
+    for x in arr:
+        if x-1 not in s:
+            curr = x
+            length = 1
+            while curr+1 in s:
+                curr += 1
+                length += 1
+            longest = max(longest, length)
+    return longest
+
+
+
+
+#eg
+
+print(longest_cons([100,4,200,1,3,2]))
